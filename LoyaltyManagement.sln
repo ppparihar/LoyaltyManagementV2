@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoyaltyManagement", "LoyaltyManagement\LoyaltyManagement.csproj", "{3B4E31A8-3831-49D7-BF87-9150ED517333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoyaltyManagement.Tests", "LoyaltyManagement.Tests\LoyaltyManagement.Tests.csproj", "{4C0D66CB-10CE-48D9-BD01-150F79E409E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B4E31A8-3831-49D7-BF87-9150ED517333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4E31A8-3831-49D7-BF87-9150ED517333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4E31A8-3831-49D7-BF87-9150ED517333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4E31A8-3831-49D7-BF87-9150ED517333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0D66CB-10CE-48D9-BD01-150F79E409E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0D66CB-10CE-48D9-BD01-150F79E409E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0D66CB-10CE-48D9-BD01-150F79E409E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0D66CB-10CE-48D9-BD01-150F79E409E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57F4BAF9-6C45-48B7-9E66-6EF573CCD274}
+	EndGlobalSection
+EndGlobal
