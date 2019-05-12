@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using LoyaltyManagement.DAL;
 
 namespace LoyaltyManagement
 {
@@ -31,6 +33,8 @@ namespace LoyaltyManagement
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+          services.AddDbContext<RewardsContext>(options =>
+          options.UseSqlServer(Configuration.GetConnectionString("RewardsDB")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

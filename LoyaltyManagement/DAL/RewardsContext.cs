@@ -8,6 +8,18 @@ namespace LoyaltyManagement.DAL
 {
     public class RewardsContext:DbContext
     {
-        RewardsContext(DbContextOptions<RewardsContext> options):base(options) { }
+       public RewardsContext(DbContextOptions<RewardsContext> options):base(options) { }
+
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Reward> Rewards { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>().ToTable("Customers");
+            modelBuilder.Entity<Reward>().ToTable("Reward");
+
+        }
     }
 }
