@@ -10,9 +10,9 @@ namespace LoyaltyManagement.Interfaces
     {
         Option<int> GetPoints(int customerId);
 
-        void AddPoints(int points, int customerId);
+        void AddPoints(int customerId, int points);
 
-        void Redeem(int points, int customerId);
-       
+        void Redeem(int customerId, int points);
+
     }
 }

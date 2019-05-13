@@ -20,7 +20,7 @@ namespace LoyaltyManagement.Repositories
             this.contextOptions = contextOptions;
         }
 
-        public void AddPoints(int points, int customerId)
+        public void AddPoints(int customerId, int points)
         {
             using (var context = new RewardsContext(contextOptions))
             {
@@ -58,7 +58,7 @@ namespace LoyaltyManagement.Repositories
             }
         }
 
-        public void Redeem(int points, int customerId)
+        public void Redeem(int customerId, int points)
         {
             using (var context = new RewardsContext(contextOptions))
             {

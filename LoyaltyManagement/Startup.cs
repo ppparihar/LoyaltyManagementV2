@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using LoyaltyManagement.DAL;
+using LoyaltyManagement.Interfaces;
+using LoyaltyManagement.Repositories;
 
 namespace LoyaltyManagement
 {
@@ -33,10 +35,12 @@ namespace LoyaltyManagement
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-          services.AddDbContext<RewardsContext>(options =>
-          options.UseSqlServer(Configuration.GetConnectionString("RewardsDB")));
+            services.AddDbContext<RewardsContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("RewardsDB")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped<IRewadsRepository, RewadsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
