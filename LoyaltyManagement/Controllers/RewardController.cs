@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using LoyaltyManagement.Models;
 using LoyaltyManagement.Interfaces;
 using LoyaltyManagement.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace LoyaltyManagement.Controllers
 {
@@ -29,7 +30,13 @@ namespace LoyaltyManagement.Controllers
         // GET: Reward/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var points = rewadsRepository.GetPoints(1);
+
+            var result = points.Select(x => new RewardDetailsViewModel { Points = x })
+                 .DefaultIfEmpty(new RewardDetailsViewModel { Points = 0 })
+                 .Single();
+
+            return View(result);
         }
 
         // GET: Reward/Create
@@ -48,10 +55,13 @@ namespace LoyaltyManagement.Controllers
                 // TODO: Add insert logic here
 
                 rewadsRepository.AddPoints(addReward.CustomerId, addReward.Points);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
             }
-            catch
+            catch(DbUpdateConcurrencyException ex)
             {
+
+                 ModelState.AddModelError("", "Unable to save changes. The Record was modified by another user after you got the original value.");
+
                 return View();
             }
         }
